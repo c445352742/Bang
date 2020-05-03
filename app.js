@@ -39,7 +39,7 @@ console.log(`---------------------Is running: ${new Date()}---------------------
 
 let timer
 watcher.on('change', function () {
-  console.log(`save on ${time}`)
+  console.log(`---------- save on ${time} -----------`)
   if (timer) {
     return;
   }
