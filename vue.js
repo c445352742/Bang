@@ -157,8 +157,8 @@ Vue.prototype.toDom = function (root) {
         continue;
       }
       if (i == 'v-if') {
-        let varable = root.attribute[i]
-        let res = false;
+        let P_$_varable = root.attribute[i]
+        let P_$_res = false;
         (function () {
           let P_$_self = self;
           let P_$_root = root
@@ -167,7 +167,7 @@ Vue.prototype.toDom = function (root) {
               eval('let ' + P_$_i + '="' + P_$_self[P_$_i] + '"')
             }
           }
-          eval('res=' + P_$_varable)
+          eval('P_$_res=' + P_$_varable)
           if (P_$_res) {
             
           } else {
