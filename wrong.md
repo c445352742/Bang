@@ -76,3 +76,16 @@
 111-115 b a a b d
 116-120 b d c c c
 
+1-5 c b b d c
+6-10 a a d? d a
+11-15 c c d a a
+16-20 c c c? b d(a?) 
+21-25 b c b? c? b
+26-30 b? b c a b
+31-35 d d a c d
+36-40 a d c d d?
+41-45 a d? c(河流冲积物的二元结构) d
+46-50 a b a? c b
+51-55 a b? d a a
+56-60 d d d b d
+
