@@ -72,4 +72,7 @@
 91-95 b b b c a
 96-100 c? b c b c
 101-105 b d d d c
-106-110 b b 
+106-110 b b c a c
+111-115 b a a b d
+116-120 b d c c c
+
