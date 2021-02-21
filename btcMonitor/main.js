@@ -48,7 +48,7 @@ var app = new Vue({
       let self = this;
       window.ajax({
         url: 'https://api.coincap.io/v2/assets', success: (res) => {
-          self.coinList = res.data.slice(self.rank, self.rank + 20);
+          self.coinList = res.data.slice(self.rank, self.rank + 10);
           self.options = []
           self.select = self.coinList[0].id
           self.hislist={}
