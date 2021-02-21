@@ -1,13 +1,49 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Document</title>
+  <link rel="stylesheet" href="style.css">
 </head>
+
 <body>
-  <div id="app"></div>
+  <div id="app">
+    <div class="drop">
+      <select v-show="!showtable" class="select" @change="changeCoin" :value="select">
+        <option v-for="item in options" :value="item.id">{{item.label}}</option>
+      </select>
+      <div class="btn" @click="toggle">toggle</div>
+      <div class="btn" @click="refresh">refresh</div>
+      <input type="number" @change='inputrank' :value="rank">
+    </div>
+    <div class="detail">
+      <table v-show="showtable" class="sum">
+        <tr>
+          <td></td>
+          <td>最高价</td>
+          <td>最低价</td>
+          <td>今日价格</td>
+          <td>今日价格比例</td>
+        </tr>
+        <tr v-for="item in table">
+          <td>{{item.name}}</td>
+          <td>{{item.max}}</td>
+          <td>{{item.min}}</td>
+          <td>{{item.now}}</td>
+          <td>{{item.rate+'%'}}</td>
+        </tr>
+      </table>
+      <canvas v-show="!showtable" id="c" width="4000" height="3000"></canvas>
+    </div>
+  </div>
+
   <!-- api网址 https://docs.coincap.io/?version=latest#ee30bea9-bb6b-469d-958a-d3e35d442d7a -->
-  <script src="./show.js"></script>
+  <script src="./jq.js"></script>
+  <script src="./ajax.js"></script>
+  <script src="./vue.js"></script>
+  <script src="./main.js"></script>
 </body>
+
 </html>
