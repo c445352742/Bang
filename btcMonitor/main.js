@@ -108,6 +108,8 @@ var app = new Vue({
       ctx.stroke();
       ctx.moveTo(150, 2900);
       ctx.lineTo(180, 2900);
+      ctx.moveTo(3800, 200);
+      ctx.lineTo(3800, 2900);
       ctx.stroke();
       ctx.closePath();
 
@@ -131,11 +133,13 @@ var app = new Vue({
         ctx.lineWidth = 4
         ctx.moveTo(150, 200 + step * i);
         ctx.lineTo(180, 200 + step * i);
+        ctx.moveTo(3770, 200 + step * i);
+        ctx.lineTo(3800, 200 + step * i);
         ctx.stroke();
         ctx.closePath();
         ctx.beginPath();
         ctx.font = "55px Arial";
-        ctx.fillText(`${parseFloat(((stepmoney * (vol - i)) + '').slice(0, 10))}`, 200, 180 + step * i)
+        ctx.fillText(`${parseFloat((stepmoney * (vol - i)).toFixed(7))}`, 200, 180 + step * i)
         ctx.closePath();
       }
       ctx.beginPath();
@@ -150,8 +154,8 @@ var app = new Vue({
         ctx.strokeStyle = '#000';
         ctx.lineWidth = 4
         //水平 200-3800 垂直200-2900
-        ctx.moveTo(200 + i * 3600 / history.length, 2900 - 2700 * (history[i].priceUsd / (stepmoney * vol)));
-        ctx.lineTo(200 + (i + 1) * 3600 / history.length, 2900 - 2700 * (history[i + 1].priceUsd / (stepmoney * vol)));
+        ctx.moveTo(200 + i * 3600 / 365, 2900 - 2700 * (history[i].priceUsd / (stepmoney * vol)));
+        ctx.lineTo(200 + (i + 1) * 3600 / 365, 2900 - 2700 * (history[i + 1].priceUsd / (stepmoney * vol)));
         ctx.stroke();
         ctx.closePath();
       }

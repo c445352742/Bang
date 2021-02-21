@@ -11,12 +11,12 @@
 <body>
   <div id="app">
     <div class="drop">
-      <select v-show="!showtable" class="select" @change="changeCoin" :value="select">
-        <option v-for="item in options" :value="item.id">{{item.label}}</option>
-      </select>
       <div class="btn" @click="toggle">toggle</div>
       <div class="btn" @click="refresh">refresh</div>
       <input type="number" @change='inputrank' :value="rank">
+      <select v-show="!showtable" class="select" @change="changeCoin" :value="select">
+        <option v-for="item in options" :value="item.id">{{item.label}}</option>
+      </select>
     </div>
     <div class="detail">
       <table v-show="showtable" class="sum">
